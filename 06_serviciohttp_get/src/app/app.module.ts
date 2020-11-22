@@ -14,6 +14,19 @@ import { FormsModule } from '@angular/forms';
 import { PlanetsService } from './services/planets.service';
 import { PlanetsListadoComponent } from './planets-listado/planets-listado.component';
 
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+/*
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+*/
+
+@Injectable()
+export class ConfigService {
+  constructor(private http: HttpClient) { }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,4 +45,8 @@ import { PlanetsListadoComponent } from './planets-listado/planets-listado.compo
   providers: [PlanetsService],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
+
+
