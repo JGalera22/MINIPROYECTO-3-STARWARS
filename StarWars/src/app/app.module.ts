@@ -14,6 +14,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
+import { PlanetsService } from './services/planets.service';
+//import { PlanetsListadoComponent } from './planets-listado/planets-listado.component';
+
 @Injectable()
 export class ConfigService {
   constructor(private http: HttpClient) { }
@@ -30,7 +33,7 @@ export class ConfigService {
     BrowserAnimationsModule,
     [ FlexLayoutModule ]
   ],
-  providers: [],
+  providers: [PlanetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
